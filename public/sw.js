@@ -1,4 +1,4 @@
-importScripts("/assets/scramjet/scramjet.all.js");
+importScripts("/assets/scramjet/scramjet.sync.js");
 
 const scramjet = new ScramjetServiceWorker();
 
