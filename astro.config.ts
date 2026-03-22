@@ -1,6 +1,6 @@
 import { execFileSync } from "node:child_process";
 import path from "node:path";
-import vercel from '@astrojs/vercel';
+import node from '@astrojs/node';
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
@@ -28,7 +28,7 @@ if (INConfig.server?.compress !== false) {
 
 export default defineConfig({
   output: "server",
-  adapter: vercel(),
+  adapter: node({ mode: 'middleware' }),
   integrations,
   prefetch: {
     defaultStrategy: "viewport",
