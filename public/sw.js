@@ -1,16 +1,10 @@
-importScripts("/assets/bundled/v.bndl.js");
-importScripts("/assets/bundled/v.cnfg.js");
-importScripts("/assets/bundled/v.sw.js");
+importScripts("/assets/scramjet/scramjet.bundle.js");
+importScripts("/assets/scramjet/scramjet.all.js");
 
-const uv = new UVServiceWorker();
+const scramjet = new ScramjetServiceWorker();
 
 self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    (async () => {
-      if (uv.route(event)) {
-        return await uv.fetch(event);
-      }
-      return await fetch(event.request);
-    })(),
-  );
+  if (scramjet.route(event)) {
+    event.respondWith(scramjet.fetch(event));
+  }
 });
