@@ -332,7 +332,7 @@ const initSettings = () => {
 
     const storedAb = localStorage.getItem("ab");
     const initialEnabled = storedAb === "true";
-    if (storedAb === null) localStorage.setItem("ab", "false");
+    if (storedAb === null) localStorage.setItem("ab", "true");
     setAbUi(initialEnabled);
     abToggle.addEventListener(
       "change",
