@@ -93,7 +93,7 @@ document.addEventListener("astro:page-load", () => {
     }
   });
 
-  if (!localStorage.getItem("ab")) localStorage.setItem("ab", "false");
+  if (localStorage.getItem("ab") === null) localStorage.setItem("ab", "true");
 
   if (localStorage.getItem("ab") === "true" && window === window.top && !navigator.userAgent.includes("Firefox")) {
     const lastUrl = sessionStorage.getItem("ab-last-url");
