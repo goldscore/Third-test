@@ -1,5 +1,5 @@
-importScripts("/assets/scramjet/scramjet.bundle.js");
 importScripts("/assets/scramjet/scramjet.all.js");
+importScripts("/assets/scramjet/scramjet.bundle.js");
 
 const scramjet = new ScramjetServiceWorker();
 
