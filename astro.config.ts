@@ -28,7 +28,7 @@ if (INConfig.server?.compress !== false) {
 
 export default defineConfig({
   output: "server",
-  adapter: node({ mode: 'middleware' }),
+  adapter: node({ mode: 'standalone' }),
   integrations,
   prefetch: {
     defaultStrategy: "viewport",
