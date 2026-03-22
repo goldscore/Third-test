@@ -1,6 +1,6 @@
 import { execFileSync } from "node:child_process";
 import path from "node:path";
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
