@@ -7,7 +7,7 @@ RUN bun install
 
 COPY . .
 
-RUN bun run build --verbose
+RUN bunx astro build
 
 EXPOSE 3000
 
