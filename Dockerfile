@@ -1,14 +1,14 @@
-FROM node:bookworm-slim AS builder
-ENV NODE_ENV=production
+FROM oven/bun:latest
 
 WORKDIR /app
 
-RUN npm install -g pnpm
-
-COPY ["package.json", "pnpm-lock.yaml*", "./"]
-
-RUN pnpm install
+COPY package.json bun.lock ./
+RUN bun install
 
 COPY . .
 
-RUN pnpm build
+RUN bun run build
+
+EXPOSE 3000
+
+CMD ["bun", "index.ts"]
